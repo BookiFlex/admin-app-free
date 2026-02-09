@@ -1,0 +1,234 @@
+/* Кастомизация Drawer */
+sl-drawer {
+  --sl-z-index-drawer: 100000;
+  --size: 550px;
+  --sl-scroll-lock-gutter: both-edges !important;
+  --body-spacing: 0 0 1.25rem 0;
+}
+sl-drawer::part(panel) {
+  border-radius: 12px;
+  margin: 8px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  --footer-spacing: 0;
+  background: transparent;
+  height: calc(100% - 16px);
+}
+
+@media screen and (max-width: 460px) {
+  sl-drawer::part(panel) {
+    width: calc(100% - 16px);
+  }
+}
+
+sl-drawer::part(header) {
+  background: linear-gradient(135deg, #009e59 0%, #5fc69a 100%);
+  color: white;
+  border-radius: 12px 0 0 0;
+  border-bottom: none;
+}
+
+sl-dialog {
+  --sl-z-index-dialog: 100001;
+}
+
+sl-dialog::part(header-actions),
+sl-drawer::part(header-actions) {
+  align-items: center;
+}
+
+sl-drawer::part(title) {
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+sl-drawer::part(footer) {
+  background: #ffffff;
+}
+
+sl-drawer::part(close-button) {
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  transition: background 0.2s;
+}
+
+sl-drawer::part(close-button):hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+sl-drawer::part(body) {
+  padding: 0;
+  background: #ffffff;
+}
+
+sl-dialog::part(panel) {
+  border-radius: 12px;
+}
+
+sl-dialog::part(header) {
+  background: linear-gradient(135deg, #ea6666 0%, #dd1f1f 100%);
+  color: white;
+  border-radius: 12px 12px 0 0;
+  border-bottom: none;
+  vertical-align: center;
+}
+
+sl-dialog::part(close-button) {
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  transition: background 0.2s;
+}
+
+.sl-toast-stack {
+  left: 0;
+  right: auto;
+  bottom: 0;
+  top: auto;
+  z-index: 100003;
+}
+
+sl-alert {
+  z-index: 100003;
+  --sl-z-index-alert: 100003;
+}
+
+/* ===========================================
+           BADGE СТИЛИ - Базовые варианты
+ =========================================== */
+
+/* Badge - Общие настройки */
+sl-badge::part(base) {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  border-radius: 20px;
+  padding-block: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  border: none;
+}
+
+/* Success - Зеленый (подтверждение, успех, активно) */
+sl-badge[variant=success]::part(base) {
+  background-color: #d1fae5;
+  border-color: #a7f3d0;
+  color: #065f46;
+}
+
+/* Warning - Желтый (ожидание, предупреждение) */
+sl-badge[variant=warning]::part(base) {
+  background-color: #fef3c7;
+  border-color: #fde68a;
+  color: #92400e;
+}
+
+/* Danger/Error - Красный (отмена, ошибка, критично) */
+sl-badge[variant=danger]::part(base) {
+  background-color: #fee2e2;
+  border-color: #fecaca;
+  color: #991b1b;
+}
+
+/* Primary - Фиолетовый (основной, важно) */
+sl-badge[variant=primary]::part(base) {
+  background-color: #e0e7ff;
+  border-color: #c7d2fe;
+  color: #4338ca;
+}
+
+/* Secondary - Серый (вторичный, нейтрально) */
+sl-badge[variant=neutral]::part(base) {
+  background-color: #f1f5f9;
+  border-color: #e2e8f0;
+  color: #475569;
+}
+
+/* ===========================================
+   BUTTON СТИЛИ - Базовые варианты
+=========================================== */
+
+/* Button - Общие настройки */
+sl-button::part(base) {
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+sl-button[variant='primary'] {
+  --sl-color-primary-600: #e0e7ff;
+  --sl-color-neutral-0: #4338ca;
+}
+sl-button[variant='primary']:hover {
+  --sl-color-primary-500: #c7d2fe;
+}
+sl-button[variant='danger'] {
+  --sl-color-danger-600: #fee2e2;
+  --sl-color-neutral-0: #991b1b;
+}
+sl-button[variant='danger']:hover {
+  --sl-color-danger-500: #fecaca;
+}
+sl-button[variant='warning'] {
+  --sl-color-warning-600: #fef3c7;
+  --sl-color-neutral-0: #92400e;
+}
+sl-button[variant='warning']:hover {
+  --sl-color-warning-500: #fde68a;
+}
+sl-button[variant='success'] {
+  --sl-color-success-600: #d1fae5;
+  --sl-color-neutral-0: #065f46;
+}
+sl-button[variant='success']:hover {
+  --sl-color-success-500: #a7f3d0;
+}
+sl-button[variant='neutral'] {
+  --sl-color-neutral-600: #f1f5f9;
+  --sl-color-neutral-0: #065f46;
+}
+sl-button[variant='neutral']:hover {
+  --sl-color-neutral-500: #e0e4e8;
+}
+
+sl-button[variant='primary'][outline] {
+  --sl-color-primary-600: #4338ca;
+}
+sl-button[variant='primary'][outline]:hover {
+  --sl-color-primary-600: #e0e7ff;
+  --sl-color-neutral-0: #4338ca;
+}
+sl-button[variant='danger'][outline] {
+  --sl-color-danger-600: #991b1b;
+}
+sl-button[variant='danger'][outline]:hover {
+  --sl-color-danger-600: #fee2e2;
+  --sl-color-neutral-0: #991b1b;
+}
+sl-button[variant='warning'][outline] {
+  --sl-color-warning-600: #92400e;
+}
+sl-button[variant='warning'][outline]:hover {
+  --sl-color-warning-600: #fef3c7;
+  --sl-color-neutral-0: #92400e;
+}
+sl-button[variant='success'][outline] {
+  --sl-color-success-600: #065f46;
+}
+sl-button[variant='success'][outline]:hover {
+  --sl-color-success-600: #d1fae5;
+  --sl-color-neutral-0: #065f46;
+}
+sl-button[variant='neutral'][outline] {
+  --sl-color-neutral-600: #065f46;
+}
+sl-button[variant='neutral'][outline]:hover {
+  --sl-color-neutral-600: #f1f5f9;
+  --sl-color-neutral-0: #065f46;
+}

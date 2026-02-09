@@ -1,0 +1,52 @@
+{
+  "name": "@bookiflex/admin-core",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js"
+    },
+    "./shoelace": {
+      "import": "./dist/shoelace.js"
+    },
+    "./components/*": {
+      "import": "./dist/components/*.js"
+    },
+    "./composables/*": {
+      "import": "./dist/composables/*.js"
+    },
+    "./api": {
+      "import": "./dist/api/api.js"
+    },
+    "./shared/*": {
+      "import": "./dist/shared/*.js"
+    },
+    "./turbo": {
+      "import": "./dist/turbo.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "*.vue",
+    "*.css",
+    "*.scss",
+    "./src/shoelace.js",
+    "./src/turbo.js"
+  ],
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "vite build"
+  },
+  "peerDependencies": {
+    "vue": "^3.5.0",
+    "@wordpress/i18n": "^6.6.0"
+  },
+  "dependencies": {
+    "@hotwired/turbo": "^8.0.0"
+  },
+  "devDependencies": {}
+}

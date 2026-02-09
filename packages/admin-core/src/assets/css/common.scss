@@ -1,0 +1,502 @@
+.bflex-app__container {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/**
+ * Hide some WP blocks
+ */
+.post-type-accommodation-type .misc-pub-visibility,
+.post-type-cancellation-policy .misc-pub-visibility,
+.post-type-payment-type .misc-pub-visibility,
+.post-type-rate-plan .misc-pub-visibility,
+.post-type-rate-plan .postbox-container .level-1
+{
+  display: none;
+}
+
+/**
+ * Style Carbon Fields
+ */
+.cf-container {
+  .cf-field {
+    &.cf-separator {
+      background: #f6f7f7;
+      padding-top: 0;
+      padding-bottom: 0;
+
+      h3 {
+        color: #1F2937;
+        font-weight: 600;
+      }
+    }
+
+    &.cf-hidden {
+      border: none;
+      padding: 0;
+
+      .cf-field__head {
+        display: none;
+      }
+    }
+  }
+}
+
+#carbon_fields_container_bflex_notifications,
+#carbon_fields_container_bflex_settings {
+  border: none;
+  box-shadow: none;
+  background: transparent;
+
+  .cf-container__tabs.cf-container__tabs--tabbed-vertical {
+    background: transparent;
+    border-right: none;
+    margin-right: 10px;
+
+    .cf-container__tabs-list {
+      .cf-container__tabs-item {
+        border-bottom: none;
+        border-radius: 10px;
+        margin-bottom: 10px;
+      }
+      .cf-container__tabs-item--current {
+        background: #EFF6FF;
+
+        button {
+          color: #1D4ED8 !important;
+          //border-left: 3px solid #3B82F6;
+          //border-radius: 10px;
+        }
+      }
+    }
+  }
+
+  .cf-container__fields {
+    border-radius: 10px;
+    background: transparent;
+
+    .cf-field {
+      border-right: none;
+      background: #FFFFFF;
+
+      &.description-settings-block {
+        border-radius: 10px;
+        background: #fbfbfc;
+      }
+
+      &.block-description {
+        color: #6B7280;
+      }
+    }
+
+    .cf-separator {
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      //background: transparent;
+      border: none;
+      margin-top: 10px;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+/* Скрываем таб по умолчанию */
+.carbon-tab:has([data-field-name="conditional_field"]) {
+  display: none;
+}
+
+/* Показываем когда родительский контейнер содержит нужное значение */
+.carbon-container:has([data-field-name="main_select"] option[value="target_value"]:checked),
+.carbon-tab:has([data-field-name="conditional_field"]) {
+  display: block;
+}
+
+/**
+ * Common styles
+ */
+/* Секции контента */
+.section {
+  padding: 24px 24px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.section:last-child {
+  border-bottom: none;
+}
+
+.section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #475569;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.guest-request {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.guest-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.info-label {
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.info-value {
+  font-size: 14px;
+  color: #1e293b;
+  font-weight: 500;
+}
+
+/* Кастомизация Alert для специальных запросов */
+sl-alert.special-request {
+  --background-color: #fef3c7;
+  --border-color: #fbbf24;
+  --color: #92400e;
+  margin-top: 12px;
+}
+
+sl-alert.special-request::part(base) {
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.dates-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.date-item {
+  text-align: center;
+  padding: 12px;
+  background: #ffffff;
+  border-radius: 8px;
+}
+
+.date-label {
+  font-size: 11px;
+  color: #64748b;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.date-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-top: 4px;
+}
+
+.reservation-section {
+  background: #f8fafc;
+}
+
+.accommodation-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Кастомизация Card для финансовой сводки */
+sl-card.financial-summary {
+  --border-radius: 8px;
+  --padding: 16px;
+  width: 100%;
+}
+
+sl-card.financial-summary::part(base) {
+  border: none;
+  box-shadow: none;
+  background: #f8fafc;
+}
+
+.financial-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.financial-row:last-child {
+  margin-bottom: 0;
+  padding-top: 8px;
+  border-top: 2px solid #e2e8f0;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.financial-label {
+  color: #475569;
+  font-size: 14px;
+}
+
+.financial-value {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.details-value {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.total-value {
+  color: #059669;
+  font-size: 18px;
+}
+
+.payment-section {
+  background: #fefefe;
+}
+
+/* Кастомизация Card для платежей */
+sl-card.payment-item {
+  --background-color: white;
+  --border-color: #e2e8f0;
+  --border-radius: 8px;
+  --padding: 16px;
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+.payment-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.payment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.payment-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.payment-amount {
+  font-weight: 600;
+  color: #1e293b;
+  font-size: 16px;
+}
+
+.payment-method {
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.reservation-actions,
+.payment-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: end;
+}
+
+.payment-details-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Payment allocation */
+sl-card.allocation-item {
+  --background-color: white;
+  --border-color: #e2e8f0;
+  --border-radius: 8px;
+  --padding: 16px;
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+.allocation-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.allocation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.allocation-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.allocation-amount {
+  font-weight: 600;
+  color: #1e293b;
+  font-size: 16px;
+}
+
+.allocation-source {
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Кастомизация Alert для уведомления об отмене */
+sl-alert.cancellation-notice {
+  --background-color: #fef2f2;
+  --border-color: #fecaca;
+  --color: #dc2626;
+}
+
+sl-alert.cancellation-notice::part(base) {
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.action-panel {
+  padding: 0 10px 10px 10px;
+}
+
+/** Financial summary details **/
+.reservation-summary {
+  margin: 0 auto;
+  font-size: 14px;
+  line-height: 1.6;
+
+  /* Разделы ночей */
+  .night-breakdown h4 {
+    margin: 0 0 6px 0;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #333;
+  }
+
+  /* Строки с ценами */
+  .price-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 6px;
+    position: relative;
+  }
+
+  .price-line span:first-child {
+    flex: 1;
+    padding-right: 10px;
+    position: relative;
+  }
+
+  .price-line span:last-child {
+    white-space: nowrap;
+    font-weight: 500;
+  }
+
+  /* Точки между названием и ценой */
+  .price-line span:first-child::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    right: 10px;
+  }
+
+  /* Модификаторы (налоги, сборы) с отступом */
+  .price-line.modifier {
+    padding-left: 16px;
+    font-size: 13px;
+    color: #666;
+  }
+
+  /* Промежуточные итоги */
+  .subtotal {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid #e0e0e0;
+    font-weight: bold;
+  }
+
+  .section {
+    border-bottom: 1px dashed #e0e0e0;
+  }
+
+  /* Секции дополнительных сборов и скидок */
+  .charges-section h4,
+  .extras-section h4,
+  .discounts-section h4 {
+    margin: 0 0 6px 0;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #333;
+  }
+
+  /* Скидки - зеленый цвет */
+  .discounts-section .price-line span:last-child {
+    color: #2e7d32;
+  }
+
+  /* Итоговая сумма */
+  .total-section {
+    text-align: right;
+  }
+
+  .total-section strong {
+    display: block;
+    line-height: 1;
+    font-size: 20px;
+    color: #000;
+  }
+}
+
+.crb-pro-notice {
+  background: #f9fafb;
+  border: 1px dashed #cbd5e1;
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-top: 12px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #334155;
+
+  .crb-pro-title {
+    color: #0f172a;
+  }
+
+  .crb-pro-link {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+
+    :hover {
+      text-decoration: underline;
+    }
+  }
+}

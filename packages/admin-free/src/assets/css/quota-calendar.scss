@@ -1,0 +1,38 @@
+.quota-calendar {
+  max-width: max-content;
+  width: auto;
+  margin: 0 auto;
+}
+
+.quota-calendar div {
+  box-sizing: border-box;
+}
+
+// Loading and empty states
+.calendar-loading,
+.calendar-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.calendar-loading {
+  sl-spinner {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: #666;
+    margin: 0;
+  }
+}
+
+.calendar-empty {
+  sl-alert {
+    max-width: 600px;
+  }
+}

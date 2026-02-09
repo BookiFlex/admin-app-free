@@ -1,0 +1,239 @@
+.rate-plan-calendar {
+  max-width: max-content;
+  width: auto;
+  margin: 0 auto;
+}
+.rate-plan-calendar div {
+  box-sizing: border-box;
+}
+.rate-plan-calendar__header {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1 1 auto;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: #fff;
+  border-color: #fff;
+  color: rgba(0, 0, 0, .87);
+}
+.rate-plan-calendar__header-wrapper {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+}
+.rate-plan-calendar__body {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1 1 auto;
+  margin-top: 24px;
+}
+.rate-plan-calendar__body-wrapper {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+}
+
+/* Dates calendar */
+.dates-container {
+  display: flex;
+  flex-direction: column;
+}
+.dates-container .scroll-container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  overflow-x: scroll;
+  font-size: 16px;
+}
+.dates-container__month-header {
+  text-align: center;
+  padding: 0.5em 0;
+}
+
+/* Label Block Styles */
+.dates-container__label {
+  position: sticky;
+  left: 0;
+  top: 0;
+  flex-shrink: 0;
+  width: 200px;
+  background: #fff;
+  z-index: 1;
+}
+.dates-container__label-item {
+  border-bottom: 1px solid #e0e0e0;
+  font-size: .8em;
+  padding: .5em;
+  text-align: right;
+}
+
+.dates-container__label-item,
+.day-cell__item {
+  height: 30px;
+  width: 100%;
+}
+
+.dates-container__label-item.half,
+.day-cell__item.half {
+  height: 15px;
+}
+
+.dates-container__data {
+  display: flex;
+  flex-direction: row;
+}
+.dates-container__data-item {
+  text-align: right;
+  border-left: 1px solid #e0e0e0;
+}
+
+.day-cell {
+  width: 80px;
+}
+
+.day-cell__item {
+  padding: .5em;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: .8em;
+}
+
+.dates-container__label .inherited,
+.day-cell__item span.inherited {
+  opacity: .8;
+  color: #2271b1;
+}
+
+.day-cell__item span.overridden {
+  color: #dc2626;
+}
+
+.day-cell__item .status {
+  position: absolute;
+  left: 0;
+  background: #e53935;
+  text-align: left;
+  border-radius: 3px;
+  padding: 1px 5px;
+  font-size: 12px;
+  top: 5px;
+  color: #fff;
+}
+
+/* Calendar actions */
+.rate-plan-calendar__actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.rate-plan-calendar__actions > h2 {
+  font-size: large !important;
+  font-weight: bold !important;
+}
+.rate-plan-calendar__actions > div {
+  display: flex;
+  gap: 5px;
+}
+
+/* Restrictions */
+.restriction-visible-show .dates-container .restriction {
+  display: block;
+}
+.restriction-visible-hide .dates-container .restriction {
+  display: none;
+}
+.dates-container .boolean span {
+  display: flex;
+  justify-content: center;
+  font-size: larger;
+  line-height: 1;
+  color: lightgrey;
+  font-family: monospace;
+}
+.dates-container .boolean span.active {
+  color: red;
+}
+
+/* Navigation */
+.rate-plan-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1em 0;
+}
+.rate-plan-navigation__date-range {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-container sl-select,
+.form-container date-range {
+  width: 100%;
+}
+
+.form-container fieldset {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 1rem;
+  margin: 0 0 1rem;
+}
+
+.form-container fieldset legend {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #555;
+}
+
+.form-container fieldset > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  //gap: 1rem;
+}
+
+.form-container sl-switch,
+.form-container sl-checkbox {
+  flex-shrink: 0;
+}
+
+.form-container currency-input,
+.form-container sl-input {
+  flex-grow: 1;
+  max-width: 180px;
+}
+
+.form-container sl-button {
+  align-self: flex-end;
+}
+
+/**
+ * Date range
+ */
+.date-range__dates {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.date-range__days {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.date-range__separator {
+  padding: 0 .3rem; align-self: center
+}
+.date-range__days {
+  padding: 0.5rem 0;
+}
+.date-range__container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.date-range__items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
